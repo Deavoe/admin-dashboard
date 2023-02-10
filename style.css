@@ -1,0 +1,38 @@
+:root {
+    --main-color: #38bdf8;
+    --bg-color: rgb(255,255,255);
+    --text-color: rgb(0,0,0);
+    --text-secondary: rgb(66,66,66);
+}
+
+body {
+    background-color: #e2e8f0;
+    padding:0;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 10fr;
+    grid-template-columns: minmax(250px,1fr) 4fr;
+    /* grid-template-columns: 20px 20px; */
+}
+
+.sidebar {
+    background-color: var(--main-color);
+    grid-area: 1 / 1 / span 3 / 1;
+}
+
+.header {
+    background-color: var(--bg-color);
+    grid-area: 1 / 2 / 1 / 2;
+}
+
+.top_menu {
+    background-color: var(--bg-color);
+    grid-area: 2 / 2 / 2 / 2;
+}
+
+.content {
+    grid-area: 3 / 2 / 3 / 2;
+}
