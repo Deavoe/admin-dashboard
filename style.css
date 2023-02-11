@@ -36,11 +36,6 @@ a:hover {
     opacity: 0;
 }
 
-.top_menu {
-    background-color: var(--bg-color);
-    grid-area: 2 / 2 / 2 / 2;
-}
-
 .content {
     grid-area: 3 / 2 / 3 / 2;
 }
@@ -48,6 +43,102 @@ a:hover {
 .avatar {
     border-radius: 50%;
     display: inline-block;
+}
+
+/* TOP MENU TOP MENU TOP MENU */
+
+.top_menu {
+    background-color: var(--bg-color);
+    grid-area: 2 / 2 / 2 / 2;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-left: 50px;
+    padding-right: 50px; */
+    padding: 10px 50px 20px 50px;
+    gap: 20px;
+}
+
+.menu-greeting {
+    display:flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.greeting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    flex: 2;
+}
+
+.greeting :nth-child(1) {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 0;
+}
+
+.greeting :nth-child(2) {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin: 0;
+}
+
+.menu-greeting .avatar {
+    background-color: #fde047;
+    min-width: 75px;
+    min-height: 75px;
+    max-width: 75px;
+    max-height: 75px;
+    /* flex: 1; */
+    display: grid;
+    place-items:center;
+    outline: 1px solid rgba(166,166,55,.75) ;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+
+.menu-greeting .avatar:hover {
+    box-shadow: 0 0 4px rgba(0,0,0,.75) ;
+    /* scale: 1.02; */
+    background-color: #fce471;
+}
+
+.menu-greeting .avatar > img {
+    filter:invert();
+    filter: contrast(70%);
+    min-width: 55px;
+    min-height: 55px;
+    max-width: 55px;
+    max-height: 55px;
+}
+
+.menu-buttons {
+    display:flex;
+    gap: 2rem;
+    /* flex: 1; */
+}
+
+.menu-buttons > button {
+    background-color: var(--main-color);
+    color: rgb(255,255,255);
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: .75em 2em;
+    border-radius: 3em;
+    transition: all 0.12s;
+    box-shadow: 0 0 2px rgba(0,0,0,.65) ;
+}
+
+.menu-buttons > button:hover {
+    scale: 1.032;
+    box-shadow: 0 0 3px rgba(0,0,0,.25) ;
+    background-color: #1295d6;
 }
 
 /* HEADER HEADER HEADER */
@@ -122,12 +213,13 @@ a:hover {
     /* flex: 1; */
     display: grid;
     place-items:center;
-    outline: 1px solid rgba(0,0,0,.5) ;
+    outline: 1px solid rgba(166,166,55,.5) ;
     transition: all 0.15s;
+    cursor: pointer;
 }
 
 .header .avatar:hover {
-    box-shadow: 0 0 4px rgba(0,0,0,.75) ;
+    box-shadow: 0 0 3px rgba(0,0,0,.75) ;
     /* scale: 1.02; */
     background-color: #fce471;
 }
@@ -139,7 +231,6 @@ a:hover {
     min-height: 35px;
     max-width: 35px;
     max-height: 35px;
-    cursor: pointer;
 }
 
 .notif {
@@ -197,9 +288,9 @@ a:hover {
 }
 
 .sidebar * {
-    color: var(--bg-color);
+    color: rgb(255,255,255);
     font-size: 1.2rem;
-    /* font-weight: 600; */
+    font-weight: 600;
     letter-spacing: .06rem ;
     padding: 0 5px;
     margin-top: 9px;
