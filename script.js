@@ -1,3 +1,11 @@
+let projects = 12
+let pc = document.querySelector('.project-container')
+var div = document.querySelector('.project')
+for (let i = 1; i<projects; i++) {
+    clone = div.cloneNode(true); // true = clone all childNodes and event handlers
+    pc.appendChild(clone);
+}
+
 function simHover(e) {
     e.target.classList.toggle("sb-hover");
     // e.target.parentElement.querySelector([type='a']).classList.toggle("sb-hover")

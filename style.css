@@ -12,13 +12,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
-    display: grid;
-    grid-template-rows: .5fr 1fr 6fr;
-    grid-template-columns: 230px 7.5fr;
-    /* grid-template-columns: 20px 20px; */
-}
-
 a {
     text-decoration: none;
     /* text-shadow: 1px 1px 0px rgba(0,0,0,.75); */
@@ -36,13 +29,142 @@ a:hover {
     opacity: 0;
 }
 
-.content {
-    grid-area: 3 / 2 / 3 / 2;
-}
-
 .avatar {
     border-radius: 50%;
     display: inline-block;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 90px 105px 1200px ;
+    grid-template-columns: 230px 7.5fr;
+    /* grid-template-columns: 20px 20px; */
+}
+
+/* CONTENT CONTENT CONTENT */
+
+.content {
+    grid-area: 3 / 2 / 3 / 2;
+    display: grid;
+    grid-template-columns:4fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    /* grid-template-rows: repeat(auto-fit, minmax(10vh, 1fr)); */
+    padding: 30px;
+    gap: 30px;
+    /* height: 90vh; */
+}
+
+.content-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.projects {
+    grid-area: 1 / 1 / span 2 / 1;
+    padding: 0;
+    margin: 0;
+}
+
+.project-container {
+    display:grid;
+    grid-template-columns: repeat(4,1fr) ;
+    grid-template-rows: repeat(3,340px) ;
+    /* flex-wrap: wrap; */
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-rows:repeat( auto-fit, minmax(100px, 1fr) ); */
+    /* grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) ); */
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.project {
+    background-color: rgb(255,255,255);
+    border-radius: .5rem;
+    border-left: .5rem solid #0284c7 ;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.15);
+    padding: 25px 25px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.12s ease-in-out;
+}
+
+.project:hover {
+    border-left: clamp(.5rem,.8vw,.82rem) solid #0d92d4 ;
+    box-shadow: 3px 3px 10px rgba(78, 78, 78, 0.435);
+    cursor: pointer;
+}
+
+.project p:nth-of-type(2) {
+    color: rgb(77,77,77);
+    margin:0;
+    padding:0;
+    font-size: clamp(12px,1vw,1rem) 
+}
+
+.project-title {
+    font-weight: 700;
+    font-size: clamp(16px,2vw,1.5rem) ;
+    color:rgb(0,0,0);
+    padding: 0;
+    margin: 0;
+}
+
+.project > img {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 25%;
+    border-radius: 5px;
+    /* background-color: #f2dd6e; */
+    /* background-image: linear-gradient(319deg, #f2dd6e 0%, #cff27e 37%, #ef959d 100%); */
+    /* background-color: #c2eaba;
+background-image: linear-gradient(319deg, #c2eaba 0%, #c5f4e0 37%, #efc2cf 100%); */
+background-color: #bacdea;
+background-image: linear-gradient(319deg, #bad7ea 0%, #c5f1f4 37%, #c2ceef 100%);
+
+}
+
+.project-icons {
+    display:flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    height: clamp(25px, 3%,3%);
+    gap: clamp(10px,5%,20px) ;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.project-icons * {
+    transition: all 0.2s;
+}
+
+.project-icons *:hover {
+    scale: 1.33;
+}
+
+.announce-container,
+.trending-projects {
+    background-color: #fce471;
+    width: 100%;
+    height: 100%;
+}
+
+.announcements {
+    grid-area: 1 / 2 / 1 / 2;
+}
+
+.trending {
+    grid-area: 2 / 2 / 2 / 2;
+}
+
+.projects,
+.announcements,
+.trending {
+    display:flex;
+    flex-direction: column;
 }
 
 /* TOP MENU TOP MENU TOP MENU */
@@ -57,6 +179,8 @@ a:hover {
     padding-right: 50px; */
     padding: 10px 50px 20px 50px;
     gap: 20px;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, .3) ;
+    z-index: 2;
 }
 
 .menu-greeting {
@@ -119,6 +243,7 @@ a:hover {
 .menu-buttons {
     display:flex;
     gap: 2rem;
+    /* gap: clamp(15px,2vw,50%); */
     /* flex: 1; */
 }
 
@@ -156,6 +281,7 @@ a:hover {
     padding-left: 40px;
     padding-right: 40px;
     transition: all 0.12s;
+    z-index: 3;
 }
 
 .header > form:nth-of-type(1) {
@@ -280,7 +406,7 @@ a:hover {
 .sidebar {
     background-color: var(--main-color);
     grid-area: 1 / 1 / span 3 / 1;
-    box-shadow: inset 0 4px 12px rgba(0,0,0,.5);
+    box-shadow: 0 4px 8px rgba(0,0,0,.5);
     z-index: 1;
     display:flex;
     flex-direction: column;
